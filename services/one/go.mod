@@ -1,12 +1,12 @@
-module github.com/nelsonstr/go-monorepo/services/one
+module github.com/nelsonstr/monorepo/services/one
 
 go 1.19
 
-replace github.com/nelsonstr/go-monorepo/libs/hello => ../../libs/hello
+//replace github.com/nelsonstr/monorepo/libs/hello => ../../libs/hello
 
 require (
 	github.com/labstack/echo/v4 v4.10.0
-	github.com/nelsonstr/go-monorepo/libs/hello v0.0.1
+
 )
 
 require (
