@@ -6,8 +6,7 @@ go 1.19
 
 require (
 	github.com/labstack/echo/v4 v4.10.0
-	github.com/nelsonstr/monorepo/libs/hello v0.0.1
-
+	github.com/nelsonstr/monorepo/libs/hello v0.1.1
 )
 
 require (
