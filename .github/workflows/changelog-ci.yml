@@ -36,21 +36,14 @@ jobs:
           # defaults to `github-actions[bot]` if not provided.
           committer_username: 'test'
           committer_email: 'test@test.com'
-          # Optional, only required when you want to run Changelog CI
-          # on an event other than `pull_request` event.
-          # In this example `release_version` is fetched from `workflow_dispatch` events input.
-          # You can use any other method to fetch the release version
-          # such as environment variable or from output of another action
-          release_version: "${{ github.event.inputs.release_version }}"
-          # Optional
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
+          release_version: "${{ github.event.inputs.release_version }}"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Get Changelog Output
         id: changelog
         run: |
           echo "${{ steps.changelog-ci.outputs.changelog }}"
           echo "${{ steps.changelog-ci.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
-
       - name: Create release
         uses: actions/create-release@latest
         env:
