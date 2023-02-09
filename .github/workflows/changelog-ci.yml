@@ -21,6 +21,7 @@ jobs:
 
       - name: Run Changelog CI
         uses: saadmk11/changelog-ci@v1.1.1
+        id: changelog-ci
         with:
           # Optional, you can provide any name for your changelog file,
           # We currently support Markdown (.md) and reStructuredText (.rst) files
@@ -33,8 +34,8 @@ jobs:
           config_file: changelog-ci-config.yaml
           # Optional, This will be used to configure git
           # defaults to `github-actions[bot]` if not provided.
-#          committer_username: 'test'
-#          committer_email: 'test@test.com'
+          committer_username: 'test'
+          committer_email: 'test@test.com'
           # Optional, only required when you want to run Changelog CI
           # on an event other than `pull_request` event.
           # In this example `release_version` is fetched from `workflow_dispatch` events input.
@@ -43,10 +44,6 @@ jobs:
           release_version: "${{ github.event.inputs.release_version }}"
           # Optional
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: changelog-ci
-        uses: saadmk11/changelog-ci@v1.1.1
-        id: changelog-ci
 
       - name: Get Changelog Output
         run: |
