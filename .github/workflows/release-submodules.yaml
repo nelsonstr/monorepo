@@ -30,10 +30,14 @@ jobs:
             const changes = status.split('\n');
             let nodePaths = new Set();
             for (const change of changes) {
-              if (change.startsWith('packages/')) {
+              if (change.startsWith('services/')) {
                   const library = change.split('/')[1];
                   nodePaths.add(library);
               };
+              if (change.startsWith('libs/')) {
+                    const library = change.split('/')[1];
+                    nodePaths.add(library);
+             };
             }
             nodePaths = Array.from(nodePaths);
             console.log(`::set-output name=nodePaths::${JSON.stringify(nodePaths)}`);
