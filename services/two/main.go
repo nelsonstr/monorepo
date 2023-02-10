@@ -10,7 +10,7 @@ import (
 func main() {
 	e := echo.New()
 	e.GET("/two/hello", func(c echo.Context) error {
-		return c.String(http.StatusOK, hello.Greet("Friend"))
+		return c.String(http.StatusOK, hello.Greet("Friend2"))
 	})
 	_ = e.Start(":8080")
 }
