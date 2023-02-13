@@ -2,5 +2,6 @@
   "libs/hello": "5.0.0",
   "services/one": "2.2.2",
   "services/two": "1.2.2",
-  "packages/one": "2.0.0"
+  "packages/one": "2.0.0",
+  "packages/two": "2.0.0"
 }
